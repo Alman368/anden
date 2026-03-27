@@ -136,7 +136,7 @@ function applyData() {
   elements.rolePill.textContent = carnetData.role;
   elements.backRolePill.textContent = carnetData.role;
   elements.expiryDate.textContent = carnetData.expiresAt;
-  elements.backExpiry.textContent = `Valido hasta: ${carnetData.expiresAt}`;
+  elements.backExpiry.textContent = `Válido hasta: ${carnetData.expiresAt}`;
   elements.frontPortrait.src = carnetData.photoSrc;
   elements.backPortrait.src = carnetData.photoSrc;
   elements.frontPortrait.alt = carnetData.photoAlt;

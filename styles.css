@@ -24,7 +24,7 @@
   --uma-blue-soft: #5d769a;
   --uma-cyan: #49b2dd;
   --toolbar-shadow: #111111;
-  --toolbar-height: 52px;
+  --toolbar-height: 36px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --ios-shell: #918783;
@@ -84,11 +84,11 @@ button {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
   min-height: var(--toolbar-height);
-  padding: 0 14px;
+  padding: 0 10px;
   background: var(--panel);
-  border-bottom: 3px solid var(--toolbar-shadow);
+  border-bottom: none;
 }
 
 .toolbar.is-hidden {
@@ -100,42 +100,42 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 8px;
+  padding: 4px 6px;
 }
 
 .toolbar__back {
   color: #1e325d;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .toolbar__back svg {
-  width: 22px;
-  height: 22px;
+  width: 16px;
+  height: 16px;
 }
 
 .toolbar__title {
   margin: 0;
   text-align: center;
   color: #16345d;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.2;
   white-space: nowrap;
 }
 
 .toolbar__flip {
-  gap: 9px;
-  padding: 6px 12px;
+  gap: 6px;
+  padding: 4px 10px;
   border-radius: 999px;
   background: #edf7fe;
   color: var(--uma-cyan);
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 400;
 }
 
 .toolbar__flip svg {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   color: var(--uma-blue);
 }
 

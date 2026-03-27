@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Carnet universitario UMA</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <div class="setup-screen" id="setupScreen">
+      <div class="setup-card">
+        <img class="setup-logo" src="./assets/images/UMA_logo_marca.png" alt="Universidad de Malaga | uma.es">
+        <h1 class="setup-title">Configurar carnet</h1>
+
+        <label class="setup-label" for="setupName">Nombre completo</label>
+        <input class="setup-input" id="setupName" type="text" placeholder="NOMBRE APELLIDO1 APELLIDO2">
+
+        <label class="setup-label" for="setupDni">DNI</label>
+        <input class="setup-input" id="setupDni" type="text" placeholder="12345678A">
+
+        <label class="setup-label" for="setupNiu">NIU</label>
+        <input class="setup-input" id="setupNiu" type="text" placeholder="073248195X">
+
+        <label class="setup-label">Foto</label>
+        <div class="setup-photo-row">
+          <div class="setup-photo-preview" id="setupPhotoPreview">
+            <img id="setupPhotoImg" src="./assets/images/photo-placeholder.svg" alt="Preview">
+          </div>
+          <label class="setup-photo-btn" for="setupPhotoInput">Seleccionar foto</label>
+          <input type="file" id="setupPhotoInput" accept="image/*" hidden>
+        </div>
+
+        <button class="setup-submit" id="setupSubmit" type="button">Generar carnet</button>
+      </div>
+    </div>
+
+    <div class="phone-shell is-hidden" id="phoneShell">
+      <header class="toolbar" id="toolbar">
+        <button class="toolbar__back" type="button" aria-label="Volver" data-no-toolbar-toggle>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M15.5 4.5 8 12l7.5 7.5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.8"/>
+          </svg>
+          <span>Volver</span>
+        </button>
+
+        <h1 class="toolbar__title">Carnet universitario</h1>
+
+        <button class="toolbar__flip" id="flipButton" type="button" aria-controls="frontFace backFace" aria-pressed="false" data-no-toolbar-toggle>
+          <svg viewBox="0 0 512 512" aria-hidden="true">
+            <path d="M320 120l48 48-48 48" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+            <path d="M352 168H144a80 80 0 0 0-80 80v16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+            <path d="M192 392l-48-48 48-48" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+            <path d="M160 344h208a80 80 0 0 0 80-80v-16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+          </svg>
+          <span id="flipButtonLabel">Reverso</span>
+        </button>
+      </header>
+
+      <main class="screen">
+        <section class="card-face" id="frontFace" aria-label="Anverso">
+          <div class="card-front" id="cardFront">
+            <img
+              class="brand-strip"
+              src="./assets/images/UMA_logo_marca.png"
+              alt="Universidad de Malaga | uma.es"
+            >
+
+            <h2 class="course-title" id="courseTitle">Curso 2025/2026</h2>
+
+            <div class="identity-grid">
+              <div class="portrait-frame">
+                <img class="portrait-frame__image" id="frontPortrait" src="./assets/images/photo-placeholder.svg" alt="Placeholder para sustituir por la foto del carnet">
+              </div>
+
+              <div class="qr-column">
+                <div class="qr-card">
+                  <div class="qr-code" id="frontQr" aria-label="Codigo QR"></div>
+                </div>
+                <img
+                  class="euro-student-badge"
+                  src="./assets/images/euro_student.png"
+                  alt="European Student"
+                >
+              </div>
+
+              <div class="validity-copy">
+                <p class="validity-copy__time" id="frontTimestamp">20:49:06<br>23/03/2026</p>
+                <p class="validity-copy__expiry">Valido hasta<br><span id="expiryDate">30/09/2026</span></p>
+                <button class="inline-flip is-hidden" id="inlineFrontFlip" type="button" data-no-toolbar-toggle>
+                  <svg viewBox="0 0 512 512" aria-hidden="true">
+                    <path d="M320 120l48 48-48 48" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                    <path d="M352 168H144a80 80 0 0 0-80 80v16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                    <path d="M192 392l-48-48 48-48" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                    <path d="M160 344h208a80 80 0 0 0 80-80v-16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                  </svg>
+                  <span id="inlineFrontFlipLabel">Reverso</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="identity-copy">
+              <h3 id="studentName">ALBERTO BARTOLOME IRUELA</h3>
+              <p id="studentDni">DNI: 77427961W</p>
+              <p id="studentNiu">NIU: 073248195X</p>
+            </div>
+
+            <div class="role-row">
+              <span class="role-pill" id="rolePill">Estudiante</span>
+            </div>
+
+            <img
+              class="campus-illustration"
+              src="./assets/images/fondo-carnet-vertical-blue.png"
+              alt=""
+            >
+          </div>
+        </section>
+
+        <section class="card-face is-hidden" id="backFace" aria-label="Reverso">
+          <div class="card-back" id="cardBack">
+            <div class="detail-card">
+              <div class="detail-summary">
+                <div class="detail-summary__avatar">
+                  <img class="detail-summary__portrait" id="backPortrait" src="./assets/images/photo-placeholder.svg" alt="Placeholder para sustituir por la foto del carnet">
+                </div>
+
+                <div class="detail-summary__copy">
+                  <span class="detail-summary__course" id="backCourseTitle">Curso 2025/2026</span>
+                  <h2 id="backStudentName">ALBERTO BARTOLOME IRUELA</h2>
+                  <p id="backStudentNiu">073248195X</p>
+                  <p id="backExpiry">Valido hasta: 30/09/2026</p>
+                  <button class="inline-flip inline-flip--back is-hidden" id="inlineBackFlip" type="button" data-no-toolbar-toggle>
+                    <svg viewBox="0 0 512 512" aria-hidden="true">
+                      <path d="M320 120l48 48-48 48" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                      <path d="M352 168H144a80 80 0 0 0-80 80v16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                      <path d="M192 392l-48-48 48-48" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                      <path d="M160 344h208a80 80 0 0 0 80-80v-16" fill="none" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="32"/>
+                    </svg>
+                    <span id="inlineBackFlipLabel">Anverso</span>
+                  </button>
+                </div>
+              </div>
+
+              <section class="detail-group">
+                <h3>European Student Card</h3>
+                <div class="detail-esc">
+                  <div class="detail-esc__qr">
+                    <div class="qr-code qr-code--back" id="backQr" aria-label="Codigo QR de European Student Card"></div>
+                  </div>
+                  <div class="detail-esc__brand">
+                    <img src="./assets/images/euro_student.png" alt="European Student">
+                  </div>
+                </div>
+              </section>
+
+              <section class="detail-group">
+                <h3>Vinculacion</h3>
+                <div class="detail-role-list">
+                  <span class="role-pill role-pill--back" id="backRolePill">Estudiante</span>
+                </div>
+              </section>
+
+              <section class="detail-group">
+                <h3>Documento</h3>
+                <div class="detail-meta">
+                  <div>
+                    <span class="detail-meta__label">DNI</span>
+                    <strong id="backStudentDni">77427961W</strong>
+                  </div>
+                  <div>
+                    <span class="detail-meta__label">Hora</span>
+                    <strong id="backTimestamp">20:49:06 · 23/03/2026</strong>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./vendor/qrcode.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

@@ -24,7 +24,7 @@
   --uma-blue-soft: #5d769a;
   --uma-cyan: #49b2dd;
   --toolbar-shadow: #111111;
-  --toolbar-height: 84px;
+  --toolbar-height: 52px;
   --safe-top: env(safe-area-inset-top, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --ios-shell: #918783;
@@ -88,7 +88,7 @@ button {
   min-height: var(--toolbar-height);
   padding: 0 14px;
   background: var(--panel);
-  border-bottom: 6px solid var(--toolbar-shadow);
+  border-bottom: 3px solid var(--toolbar-shadow);
 }
 
 .toolbar.is-hidden {
@@ -100,7 +100,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 8px;
+  padding: 6px 8px;
 }
 
 .toolbar__back {
@@ -125,7 +125,7 @@ button {
 
 .toolbar__flip {
   gap: 9px;
-  padding: 10px 12px;
+  padding: 6px 12px;
   border-radius: 999px;
   background: #edf7fe;
   color: var(--uma-cyan);
@@ -370,8 +370,8 @@ button {
 }
 
 .card-back {
-  min-height: calc(100vh - 84px);
-  min-height: calc(100dvh - 84px);
+  min-height: calc(100vh - var(--toolbar-height));
+  min-height: calc(100dvh - var(--toolbar-height));
   padding: 20px 16px calc(28px + var(--safe-bottom));
   background: linear-gradient(180deg, #ffffff 0%, #f7fafe 100%);
 }

@@ -43,6 +43,9 @@ html,
 body {
   height: 100%;
   margin: 0;
+}
+
+html {
   background: #ffffff;
 }
 
@@ -73,7 +76,6 @@ button {
   width: min(100vw, 430px);
   height: 100vh;
   height: 100dvh;
-  min-height: -webkit-fill-available;
   background: var(--panel);
   overflow: hidden;
 }

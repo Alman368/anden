@@ -360,15 +360,11 @@ button {
 }
 
 .campus-illustration {
-  display: block;
-  margin-top: auto;
-  margin-left: -22px;
+  position: absolute;
+  bottom: -30px;
+  left: -22px;
   width: calc(100% + 44px);
   max-width: none;
-  flex-shrink: 1;
-  min-height: 0;
-  object-fit: cover;
-  object-position: top;
   opacity: 0.9;
   pointer-events: none;
 }

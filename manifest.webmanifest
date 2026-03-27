@@ -1,0 +1,35 @@
+{
+  "name": "Carnet universitario UMA",
+  "short_name": "Carnet UMA",
+  "description": "Carnet universitario instalable para abrirlo como app a pantalla completa en el movil.",
+  "lang": "es-ES",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "categories": [
+    "education",
+    "utilities"
+  ],
+  "icons": [
+    {
+      "src": "./assets/pwa/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/pwa/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/pwa/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

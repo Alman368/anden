@@ -259,6 +259,14 @@ elements.inlineBackFlip.addEventListener("click", toggleFaces);
 elements.cardFront.addEventListener("click", onCardTap);
 elements.cardBack.addEventListener("click", onCardTap);
 
+/* --- Service Worker --- */
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker.register("./sw.js").catch(function () {});
+  });
+}
+
 /* --- Init --- */
 
 const saved = loadSaved();

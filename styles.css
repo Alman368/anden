@@ -25,6 +25,8 @@
   --uma-cyan: #49b2dd;
   --toolbar-shadow: #111111;
   --toolbar-height: 84px;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
   --ios-shell: #918783;
   --panel: #ffffff;
   --panel-soft: rgba(255, 255, 255, 0.92);
@@ -43,6 +45,10 @@ body {
   margin: 0;
 }
 
+html {
+  background: #ffffff;
+}
+
 body.carnet-active {
   overflow: hidden;
 }
@@ -50,6 +56,8 @@ body.carnet-active {
 body {
   display: flex;
   justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
   background: #ffffff;
   color: var(--text);
   font-family: "Open Sans", sans-serif;
@@ -64,8 +72,10 @@ button {
 }
 
 .phone-shell {
+  position: relative;
   width: min(100vw, 430px);
   height: 100vh;
+  height: 100dvh;
   background: var(--panel);
   overflow: hidden;
 }
@@ -131,6 +141,7 @@ button {
 
 .screen {
   height: calc(100vh - var(--toolbar-height));
+  height: calc(100dvh - var(--toolbar-height));
   background: var(--panel);
   overflow: hidden;
 }
@@ -139,10 +150,12 @@ button {
 .toolbar-hidden .card-face,
 .toolbar-hidden .card-back {
   height: 100vh;
+  height: 100dvh;
 }
 
 .card-face {
   height: calc(100vh - var(--toolbar-height));
+  height: calc(100dvh - var(--toolbar-height));
   overflow: hidden;
 }
 
@@ -155,12 +168,14 @@ button {
   display: flex;
   flex-direction: column;
   height: calc(100vh - var(--toolbar-height));
+  height: calc(100dvh - var(--toolbar-height));
   padding: 14px 22px 0;
   overflow: hidden;
 }
 
 .toolbar-hidden .card-front {
   height: 100vh;
+  height: 100dvh;
 }
 
 .brand-strip {
@@ -356,7 +371,8 @@ button {
 
 .card-back {
   min-height: calc(100vh - 84px);
-  padding: 20px 16px 28px;
+  min-height: calc(100dvh - 84px);
+  padding: 20px 16px calc(28px + var(--safe-bottom));
   background: linear-gradient(180deg, #ffffff 0%, #f7fafe 100%);
 }
 
@@ -540,7 +556,8 @@ button {
   width: min(100vw, 430px);
   margin: 0 auto;
   min-height: 100vh;
-  padding: 40px 24px;
+  min-height: 100dvh;
+  padding: calc(40px + var(--safe-top)) 24px calc(32px + var(--safe-bottom));
   background: linear-gradient(180deg, #ffffff 0%, #f0f5fa 100%);
   display: flex;
   align-items: flex-start;
